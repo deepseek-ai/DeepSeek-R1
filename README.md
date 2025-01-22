@@ -206,17 +206,49 @@ python3 -m sglang.launch_server --model deepseek-ai/DeepSeek-R1-Distill-Qwen-32B
 3. For mathematical problems, it is advisable to include a directive in your prompt such as: "put your final answer within \boxed{}".
 4. When evaluating model performance, it is recommended to conduct multiple tests and average the results.
 
-## 7. License
+## 7. Message Handling Capability
+
+DeepSeek-R1 now supports successive user or assistant messages without causing an `invalid_request_error`. The message handling logic has been modified to allow successive messages of the same role. Here are some examples of how to format messages with successive user or assistant messages:
+
+### Example 1: Interleaved Messages
+
+```json
+[
+  {"role": "user", "content": "Hello!"},
+  {"role": "assistant", "content": "Hi! How can I help?"},
+  {"role": "user", "content": "Tell me about DeepSeek R1."}
+]
+```
+
+### Example 2: Successive User Messages
+
+```json
+[
+  {"role": "user", "content": "Hello!"},
+  {"role": "user", "content": "Tell me about DeepSeek R1."}
+]
+```
+
+### Example 3: Successive Assistant Messages
+
+```json
+[
+  {"role": "assistant", "content": "Hello!"},
+  {"role": "assistant", "content": "How can I assist you today?"}
+]
+```
+
+## 8. License
 This code repository and the model weights are licensed under the [MIT License](https://github.com/deepseek-ai/DeepSeek-R1/blob/main/LICENSE).
 DeepSeek-R1 series support commercial use, allow for any modifications and derivative works, including, but not limited to, distillation for training other LLMs. Please note that:
 - DeepSeek-R1-Distill-Qwen-1.5B, DeepSeek-R1-Distill-Qwen-7B, DeepSeek-R1-Distill-Qwen-14B and DeepSeek-R1-Distill-Qwen-32B are derived from [Qwen-2.5 series](https://github.com/QwenLM/Qwen2.5), which are originally licensed under [Apache 2.0 License](https://huggingface.co/Qwen/Qwen2.5-1.5B/blob/main/LICENSE), and now finetuned with 800k samples curated with DeepSeek-R1.
 - DeepSeek-R1-Distill-Llama-8B is derived from Llama3.1-8B-Base and is originally licensed under [llama3.1 license](https://huggingface.co/meta-llama/Llama-3.1-8B/blob/main/LICENSE).
 - DeepSeek-R1-Distill-Llama-70B is derived from Llama3.3-70B-Instruct and is originally licensed under [llama3.3 license](https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct/blob/main/LICENSE).
 
-## 8. Citation
+## 9. Citation
 ```
 
 ```
 
-## 9. Contact
+## 10. Contact
 If you have any questions, please raise an issue or contact us at [service@deepseek.com](service@deepseek.com).
