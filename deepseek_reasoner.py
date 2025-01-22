@@ -19,11 +19,6 @@ class DeepSeekReasoner:
             else:
                 merged_messages.append(message)
 
-        # Ensure interleaved user and assistant messages
-        for i in range(1, len(merged_messages)):
-            if merged_messages[i]['role'] == merged_messages[i-1]['role']:
-                raise ValueError("Messages must be interleaved between user and assistant")
-
         return merged_messages
 
     def handle_request(self, request):
