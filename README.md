@@ -57,7 +57,7 @@ DeepSeek-R1 achieves performance comparable to OpenAI-o1 across math, code, and 
 To support the research community, we have open-sourced DeepSeek-R1-Zero, DeepSeek-R1, and six dense models distilled from DeepSeek-R1 based on Llama and Qwen. DeepSeek-R1-Distill-Qwen-32B outperforms OpenAI-o1-mini across various benchmarks, achieving new state-of-the-art results for dense models.
 
 <p align="center">
-  <img width="80%" src="figures/benchmark.jpg">
+  <img width="80%" src="figures/benchmark.png">
 </p>
 
 ## 2. Model Summary
