@@ -32,7 +32,7 @@
 </div>
 
 <div align="center" style="line-height: 1;">
-  <a href="https://github.com/deepseek-ai/DeepSeek-R1/blob/main/LICENSE-CODE" style="margin: 2px;">
+  <a href="https://github.com/deepseek-ai/DeepSeek-R1/blob/main/LICENSE" style="margin: 2px;">
     <img alt="Code License" src="https://img.shields.io/badge/Code_License-MIT-f5de53?&color=f5de53" style="display: inline-block; vertical-align: middle;"/>
   </a>
   <a href="https://github.com/deepseek-ai/DeepSeek-R1/blob/main/LICENSE-MODEL" style="margin: 2px;">
