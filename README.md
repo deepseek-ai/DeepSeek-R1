@@ -174,6 +174,8 @@ You can chat with DeepSeek-R1 on DeepSeek's official website: [chat.deepseek.com
 
 We also provide OpenAI-Compatible API at DeepSeek Platform: [platform.deepseek.com](https://platform.deepseek.com/)
 
+**NOTE:** Online access complies with local regulations; content filtering applies.
+
 ## 6. How to Run Locally
 
 ### DeepSeek-R1 Models
