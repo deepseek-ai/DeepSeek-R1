@@ -229,4 +229,4 @@ DeepSeek-R1 series support commercial use, allow for any modifications and deriv
 ```
 
 ## 9. Contact
-If you have any questions, please raise an issue or contact us at [service@deepseek.com](service@deepseek.com).
+If you have any questions, please raise an issue or contact us at [service@deepseek.com](mailto:service@deepseek.com).
