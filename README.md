@@ -202,7 +202,7 @@ python3 -m sglang.launch_server --model deepseek-ai/DeepSeek-R1-Distill-Qwen-32B
 
 **We recommend adhering to the following configurations when utilizing the DeepSeek-R1 series models, including benchmarking, to achieve the expected performance:**
 
-1. Set the temperature within the range of 0.5-0.7 (0.6 is recommended) to prevent endless repetitions or incoherent outputs.
+1. Set the temperature between 0.5 and 0.7 (with 0.6 recommended) to prevent endless repetition or incoherent outputs.
 2. **Avoid adding a system prompt; all instructions should be contained within the user prompt.**
 3. For mathematical problems, it is advisable to include a directive in your prompt such as: "Please reason step by step, and put your final answer within \boxed{}."
 4. When evaluating model performance, it is recommended to conduct multiple tests and average the results.
