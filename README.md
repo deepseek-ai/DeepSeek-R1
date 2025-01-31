@@ -1,6 +1,5 @@
-<div style="text-align:center">
 [🇺🇸 English 🇺🇸](./README.md) ⬦ [🇨🇳 简体中文 🇨🇳](./README_zh.md)
-</div># DeepSeek-R1
+# DeepSeek-R1
 <!-- markdownlint-disable first-line-h1 -->
 <!-- markdownlint-disable html -->
 <!-- markdownlint-disable no-duplicate-header -->
