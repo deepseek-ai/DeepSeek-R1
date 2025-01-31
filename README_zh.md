@@ -1,19 +1,4 @@
-<div align="center">
-  <a href="./README.md" style="--color-start: #00ff88; --color-end: #00a3ff">
-    <svg width="24" height="24" viewBox="0 0 24 24" style="display:inline-block;vertical-align:-4px">
-      <path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-1 15l-4-4l1.41-1.41L11 14.17l6.59-6.59L19 9l-8 8z"/>
-    </svg>
-    <span class="gradient-text">English</span>
-  </a>
-  <span style="color: rgba(255,255,255,0.3)"> ⬦ </span>
-  <a href="./README_zh.md" style="--color-start: #ff6b6b; --color-end: #ffa600">
-    <svg width="24" height="24" viewBox="0 0 24 24" style="display:inline-block;vertical-align:-4px">
-      <path fill="currentColor" d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8s8 3.6 8 8s-3.6 8-8 8"/>
-    </svg>
-    <span class="gradient-text">简体中文</span>
-  </a>
-</div>
-</style>
+[🇺🇸 English 🇺🇸](./README.md) ⬦ [🇨🇳 简体中文 🇨🇳](./README_zh.md)
 # DeepSeek-R1
 <!-- markdownlint-disable first-line-h1 -->
 <!-- markdownlint-disable html -->
