@@ -1,4 +1,8 @@
-[🇺🇸 English 🇺🇸](./README.md) | [🇨🇳 简体中文 🇨🇳](./README_zh.md)
+<p align="center">
+  <a href="./README.md" style="text-decoration: none">🌐 <strong>English</strong></a>
+  <span style="color:lightgray"> | </span>
+  <a href="./README_zh.md" style="text-decoration: none">🐉 <strong>简体中文</strong></a>
+</p>
 # DeepSeek-R1
 <!-- markdownlint-disable first-line-h1 -->
 <!-- markdownlint-disable html -->
