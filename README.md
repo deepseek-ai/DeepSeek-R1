@@ -13,17 +13,6 @@
     <span class="gradient-text">简体中文</span>
   </a>
 </div>
-
-<style>
-.gradient-text {
-  background: linear-gradient(45deg, var(--color-start), var(--color-end));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-weight: 600;
-  margin-left: 6px;
-}
-</style>
 # DeepSeek-R1
 <!-- markdownlint-disable first-line-h1 -->
 <!-- markdownlint-disable html -->
