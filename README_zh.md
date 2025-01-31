@@ -223,4 +223,3 @@ DeepSeek-R1 系列支持商业用途，允许修改和二次创作（包括但�
 
 ## 9. 联系我们
 如有疑问，请提交 issue 或发送邮件至 [service@deepseek.com](service@deepseek.com)。
-```
