@@ -48,7 +48,7 @@
 We introduce our first-generation reasoning models, DeepSeek-R1-Zero and DeepSeek-R1. 
 DeepSeek-R1-Zero, a model trained via large-scale reinforcement learning (RL) without supervised fine-tuning (SFT) as a preliminary step, demonstrated remarkable performance on reasoning.
 With RL, DeepSeek-R1-Zero naturally emerged with numerous powerful and interesting reasoning behaviors.
-However, DeepSeek-R1-Zero encounters challenges such as endless repetition, poor readability, and language mixing. To address these issues and further enhance reasoning performance,
+However, DeepSeek-R1-Zero encountered challenges such as endless repetition, poor readability, and language mixing. To address these issues and further enhance reasoning performance,
 we introduce DeepSeek-R1, which incorporates cold-start data before RL.
 DeepSeek-R1 achieves performance comparable to OpenAI-o1 across math, code, and reasoning tasks. 
 To support the research community, we have open-sourced DeepSeek-R1-Zero, DeepSeek-R1, and six dense models distilled from DeepSeek-R1 based on Llama and Qwen. DeepSeek-R1-Distill-Qwen-32B outperforms OpenAI-o1-mini across various benchmarks, achieving new state-of-the-art results for dense models.
@@ -56,7 +56,7 @@ To support the research community, we have open-sourced DeepSeek-R1-Zero, DeepSe
 **NOTE: Before running DeepSeek-R1 series models locally, we kindly recommend reviewing the [Usage Recommendation](#usage-recommendations) section.**
 
 <p align="center">
-  <img width="80%" src="figures/benchmark.jpg">
+  <img width="80%" src="figures/benchmark.jpg" alt="This is a figure of benchmarks.">
 </p>
 
 ## 2. Model Summary
@@ -65,10 +65,9 @@ To support the research community, we have open-sourced DeepSeek-R1-Zero, DeepSe
 
 **Post-Training: Large-Scale Reinforcement Learning on the Base Model**
 
--  We directly apply reinforcement learning (RL) to the base model without relying on supervised fine-tuning (SFT) as a preliminary step. This approach allows the model to explore chain-of-thought (CoT) for solving complex problems, resulting in the development of DeepSeek-R1-Zero. DeepSeek-R1-Zero demonstrates capabilities such as self-verification, reflection, and generating long CoTs, marking a significant milestone for the research community. Notably, it is the first open research to validate that reasoning capabilities of LLMs can be incentivized purely through RL, without the need for SFT. This breakthrough paves the way for future advancements in this area.
+- We directly apply reinforcement learning (RL) to the base model without relying on supervised fine-tuning (SFT) as a preliminary step. This approach allows the model to explore chain-of-thought (CoT) for solving complex problems, resulting in the development of DeepSeek-R1-Zero. DeepSeek-R1-Zero demonstrates capabilities such as self-verification, reflection, and generating long CoTs, marking a significant milestone for the research community. Notably, it is the first open research to validate that reasoning capabilities of LLMs can be incentivized purely through RL, without the need for SFT. This breakthrough paves the way for future advancements in this area.
 
--   We introduce our pipeline to develop DeepSeek-R1. The pipeline incorporates two RL stages aimed at discovering improved reasoning patterns and aligning with human preferences, as well as two SFT stages that serve as the seed for the model's reasoning and non-reasoning capabilities.
-    We believe the pipeline will benefit the industry by creating better models. 
+- We introduce our pipeline to develop DeepSeek-R1. The pipeline incorporates two RL stages aimed at discovering improved reasoning patterns and aligning with human preferences, as well as two SFT stages that serve as the seed for the model's reasoning and non-reasoning capabilities. We believe the pipeline will benefit the industry by creating better models. 
 
 ---
 
@@ -103,7 +102,7 @@ For more details regarding the model architecture, please refer to [DeepSeek-V3]
 | DeepSeek-R1-Distill-Qwen-7B  | [Qwen2.5-Math-7B](https://huggingface.co/Qwen/Qwen2.5-Math-7B) | [🤗 HuggingFace](https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B)   |
 | DeepSeek-R1-Distill-Llama-8B  | [Llama-3.1-8B](https://huggingface.co/meta-llama/Llama-3.1-8B) | [🤗 HuggingFace](https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Llama-8B)   |
 | DeepSeek-R1-Distill-Qwen-14B   | [Qwen2.5-14B](https://huggingface.co/Qwen/Qwen2.5-14B) | [🤗 HuggingFace](https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-14B)   |
-|DeepSeek-R1-Distill-Qwen-32B  | [Qwen2.5-32B](https://huggingface.co/Qwen/Qwen2.5-32B) | [🤗 HuggingFace](https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-32B)   |
+| DeepSeek-R1-Distill-Qwen-32B  | [Qwen2.5-32B](https://huggingface.co/Qwen/Qwen2.5-32B) | [🤗 HuggingFace](https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-32B)   |
 | DeepSeek-R1-Distill-Llama-70B  | [Llama-3.3-70B-Instruct](https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct) | [🤗 HuggingFace](https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Llama-70B)   |
 
 </div>
@@ -118,7 +117,7 @@ We slightly change their configs and tokenizers. Please use our setting to run t
 <div align="center">
 
 
-| Category | Benchmark (Metric) | Claude-3.5-Sonnet-1022 | GPT-4o 0513 | DeepSeek V3 | OpenAI o1-mini | OpenAI o1-1217 | DeepSeek R1 |
+| Category | Benchmark (Metric) | Claude-3.5-Sonnet-1022 | GPT-4o-0513 | DeepSeek V3 | OpenAI o1-mini | OpenAI o1-1217 | DeepSeek R1 |
 |----------|-------------------|----------------------|------------|--------------|----------------|------------|--------------|
 | | Architecture | - | - | MoE | - | - | MoE |
 | | # Activated Params | - | - | 37B | - | - | 37B |
@@ -127,13 +126,13 @@ We slightly change their configs and tokenizers. Please use our setting to run t
 | | MMLU-Redux (EM) | 88.9 | 88.0 | 89.1 | 86.7 | - | **92.9** |
 | | MMLU-Pro (EM) | 78.0 | 72.6 | 75.9 | 80.3 | - | **84.0** |
 | | DROP (3-shot F1) | 88.3 | 83.7 | 91.6 | 83.9 | 90.2 | **92.2** |
-| | IF-Eval (Prompt Strict) | **86.5** | 84.3 | 86.1 | 84.8 | - | 83.3 |
+| | IFEval (Prompt Strict) | **86.5** | 84.3 | 86.1 | 84.8 | - | 83.3 |
 | | GPQA-Diamond (Pass@1) | 65.0 | 49.9 | 59.1 | 60.0 | **75.7** | 71.5 |
 | | SimpleQA (Correct) | 28.4 | 38.2 | 24.9 | 7.0 | **47.0** | 30.1 |
 | | FRAMES (Acc.) | 72.5 | 80.5 | 73.3 | 76.9 | - | **82.5** |
-| | AlpacaEval2.0 (LC-winrate) | 52.0 | 51.1 | 70.0 | 57.8 | - | **87.6** |
+| | AlpacaEval 2.0 (LC-winrate) | 52.0 | 51.1 | 70.0 | 57.8 | - | **87.6** |
 | | ArenaHard (GPT-4-1106) | 85.2 | 80.4 | 85.5 | 92.0 | - | **92.3** |
-| Code | LiveCodeBench (Pass@1-COT) | 33.8 | 34.2 | - | 53.8 | 63.4 | **65.9** |
+| Code | LiveCodeBench (Pass@1-CoT) | 33.8 | 34.2 | - | 53.8 | 63.4 | **65.9** |
 | | Codeforces (Percentile) | 20.3 | 23.6 | 58.7 | 93.4 | **96.6** | 96.3 |
 | | Codeforces (Rating) | 717 | 759 | 1134 | 1820 | **2061** | 2029 |
 | | SWE Verified (Resolved) | **50.8** | 38.8 | 42.0 | 41.6 | 48.9 | 49.2 |
@@ -157,7 +156,7 @@ We slightly change their configs and tokenizers. Please use our setting to run t
 |------------------------------------------|------------------|-------------------|-----------------|----------------------|----------------------|-------------------|
 | GPT-4o-0513                          | 9.3              | 13.4              | 74.6            | 49.9                 | 32.9                 | 759               |
 | Claude-3.5-Sonnet-1022             | 16.0             | 26.7                 | 78.3            | 65.0                 | 38.9                 | 717               |
-| o1-mini                              | 63.6             | 80.0              | 90.0            | 60.0                 | 53.8                 | **1820**          |
+| OpenAI o1-mini                       | 63.6             | 80.0              | 90.0            | 60.0                 | 53.8                 | **1820**          |
 | QwQ-32B-Preview                              | 44.0             | 60.0                 | 90.6            | 54.5               | 41.9                 | 1316              |
 | DeepSeek-R1-Distill-Qwen-1.5B       | 28.9             | 52.7              | 83.9            | 33.8                 | 16.9                 | 954               |
 | DeepSeek-R1-Distill-Qwen-7B          | 55.5             | 83.3              | 92.8            | 49.1                 | 37.6                 | 1189              |
@@ -170,15 +169,15 @@ We slightly change their configs and tokenizers. Please use our setting to run t
 
 
 ## 5. Chat Website & API Platform
-You can chat with DeepSeek-R1 on DeepSeek's official website: [chat.deepseek.com](https://chat.deepseek.com), and switch on the button "DeepThink"
+You can chat with DeepSeek-R1 on DeepSeek's official website: [chat.deepseek.com](https://chat.deepseek.com), and switch on the button "DeepThink".
 
-We also provide OpenAI-Compatible API at DeepSeek Platform: [platform.deepseek.com](https://platform.deepseek.com/)
+We also provide OpenAI-Compatible API at DeepSeek Platform: [platform.deepseek.com](https://platform.deepseek.com/).
 
 ## 6. How to Run Locally
 
 ### DeepSeek-R1 Models
 
-Please visit [DeepSeek-V3](https://github.com/deepseek-ai/DeepSeek-V3) repo for more information about running DeepSeek-R1 locally.
+Please visit [DeepSeek-V3](https://github.com/deepseek-ai/DeepSeek-V3?#6-how-to-run-locally) repo for more information about running DeepSeek-R1 locally.
 
 **NOTE: Hugging Face's Transformers has not been directly supported yet.**
 
@@ -192,9 +191,9 @@ For instance, you can easily start a service using [vLLM](https://github.com/vll
 vllm serve deepseek-ai/DeepSeek-R1-Distill-Qwen-32B --tensor-parallel-size 2 --max-model-len 32768 --enforce-eager
 ```
 
-You can also easily start a service using [SGLang](https://github.com/sgl-project/sglang)
+You can also easily start a service using [SGLang](https://github.com/sgl-project/sglang):
 
-```bash
+```shell
 python3 -m sglang.launch_server --model deepseek-ai/DeepSeek-R1-Distill-Qwen-32B --trust-remote-code --tp 2
 ```
 
@@ -212,7 +211,7 @@ Additionally, we have observed that the DeepSeek-R1 series models tend to bypass
 
 ## 7. License
 This code repository and the model weights are licensed under the [MIT License](https://github.com/deepseek-ai/DeepSeek-R1/blob/main/LICENSE).
-DeepSeek-R1 series support commercial use, allow for any modifications and derivative works, including, but not limited to, distillation for training other LLMs. Please note that:
+DeepSeek-R1 series models support commercial use, allowing for any modifications and derivative works, including, but not limited to, distillation for training other LLMs. Please note that:
 - DeepSeek-R1-Distill-Qwen-1.5B, DeepSeek-R1-Distill-Qwen-7B, DeepSeek-R1-Distill-Qwen-14B and DeepSeek-R1-Distill-Qwen-32B are derived from [Qwen-2.5 series](https://github.com/QwenLM/Qwen2.5), which are originally licensed under [Apache 2.0 License](https://huggingface.co/Qwen/Qwen2.5-1.5B/blob/main/LICENSE), and now finetuned with 800k samples curated with DeepSeek-R1.
 - DeepSeek-R1-Distill-Llama-8B is derived from Llama3.1-8B-Base and is originally licensed under [llama3.1 license](https://huggingface.co/meta-llama/Llama-3.1-8B/blob/main/LICENSE).
 - DeepSeek-R1-Distill-Llama-70B is derived from Llama3.3-70B-Instruct and is originally licensed under [llama3.3 license](https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct/blob/main/LICENSE).
@@ -232,4 +231,4 @@ DeepSeek-R1 series support commercial use, allow for any modifications and deriv
 ```
 
 ## 9. Contact
-If you have any questions, please raise an issue or contact us at [service@deepseek.com](service@deepseek.com).
+If you have any questions, please raise an issue or contact us at [service@deepseek.com](mailto:service@deepseek.com).
