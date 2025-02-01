@@ -1,0 +1,19 @@
+name: Issue Labeler
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  auto-label:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Apply labels
+        uses: actions/labeler@v3
+        with:
+          configuration-path: .github/issue-labeler.yml
+          repo-token: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,57 @@
+name: 🐛 Bug Report
+description: Report a bug in DeepSeek-R1
+title: "[Bug]: "
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug in DeepSeek-R1! Please fill in the information below.
+  - type: dropdown
+    attributes:
+      label: Component
+      options:
+        - DeepSeek-R1 Model
+        - DeepSeek-R1-Zero Model
+        - DeepSeek-R1-Distill Models
+        - API Integration
+        - Installation/Setup
+        - Other
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Model Version
+      description: Which model version are you using?
+      placeholder: e.g., DeepSeek-R1-Distill-Qwen-32B
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Bug Description
+      description: A clear description of what the bug is
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Steps to Reproduce
+      description: Steps to reproduce the behavior
+      placeholder: |
+        1. Load model with '...'
+        2. Run inference with '...'
+        3. See error
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Expected Behavior
+      description: What you expected to happen
+  - type: textarea
+    attributes:
+      label: Environment
+      description: |
+        - OS: [e.g., Ubuntu 20.04]
+        - Python version:
+        - GPU/Hardware:
+        - Dependencies versions:
+      render: shell
