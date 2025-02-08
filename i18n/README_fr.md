@@ -38,68 +38,69 @@
 </div>
 
 <p align="center">
-  <a href="https://github.com/deepseek-ai/DeepSeek-R1/blob/main/DeepSeek_R1.pdf"><b>Paper Link</b>👁️</a>
+  <a href="https://github.com/deepseek-ai/DeepSeek-R1/blob/main/DeepSeek_R1.pdf"><b>Lien vers article scientifique</b>👁️</a>
 </p>
 
 <p align="center">
- <b> English </b> | <b><a href="https://github.com/deepseek-ai/DeepSeek-R1/blob/main/i18n/README_fr.md">Français</a></b>
+  <b><a href="https://github.com/deepseek-ai/DeepSeek-R1/blob/main/README.md">English</a></b> | <b>Français</b>
 </p>
 
 ## 1. Introduction
 
-We introduce our first-generation reasoning models, DeepSeek-R1-Zero and DeepSeek-R1. 
-DeepSeek-R1-Zero, a model trained via large-scale reinforcement learning (RL) without supervised fine-tuning (SFT) as a preliminary step, demonstrated remarkable performance on reasoning.
-With RL, DeepSeek-R1-Zero naturally emerged with numerous powerful and interesting reasoning behaviors.
-However, DeepSeek-R1-Zero encounters challenges such as endless repetition, poor readability, and language mixing. To address these issues and further enhance reasoning performance,
-we introduce DeepSeek-R1, which incorporates cold-start data before RL.
-DeepSeek-R1 achieves performance comparable to OpenAI-o1 across math, code, and reasoning tasks. 
-To support the research community, we have open-sourced DeepSeek-R1-Zero, DeepSeek-R1, and six dense models distilled from DeepSeek-R1 based on Llama and Qwen. DeepSeek-R1-Distill-Qwen-32B outperforms OpenAI-o1-mini across various benchmarks, achieving new state-of-the-art results for dense models.
+Nous vous présentons nos modèles de raisonnement de première génération, DeepSeek-R1-Zero et DeepSeek-R1.
 
-**NOTE: Before running DeepSeek-R1 series models locally, we kindly recommend reviewing the [Usage Recommendation](#usage-recommendations) section.**
+DeepSeek-R1-Zero, un modèle entraîné à l’aide d’apprentissage par renforcement (Reinforcement Learning, RL) à grande échelle, sans fine-tuning supervisé (Supervised fine-tuning, STF) comme étape préliminaire, a fait preuve d’une performance remarquable en matière de raisonnement complexe. À l’aide de RL, DeepSeek-R1-Zero a naturellement émergé avec de nombreux comportements de raisonnement puissants et intéressants. Cependant, ce modèle a rencontré plusieurs défis, tels que la répétition infinie, la mauvaise lisibilité et le mélange de langues.
+
+Pour résoudre ces problèmes et améliorer les performances de raisonnement, nous introduisons DeepSeek-R1, qui incorpore des données de cold-start avant le RL. Ce modèle atteint des performances comparables à celles d’OpenAI-o1 pour les tâches de mathématiques, de code et de raisonnement complexe.
+
+Afin de soutenir la communauté des chercheurs, nous avons ouvert DeepSeek-R1-Zero, DeepSeek-R1, ainsi que six modèles denses distillés à partir de DeepSeek-R1, basés sur Llama et Qwen. Parmi ces modèles, DeepSeek-R1-Distill-Qwen-32B surpasse OpenAI-o1-mini sur différents benchmarks, atteignant de nouveaux résultats de pointe pour les modèles denses.
+
+**NOTE: Avant d'exécuter notre série de modèles DeepSeek-R1 localement, nous vous recommandons vivement de prendre connaissance de la section [Recommandations pratiques](#recommandations-pratiques).**
 
 <p align="center">
-  <img width="80%" src="figures/benchmark.jpg">
+  <img width="80%" src="../figures/benchmark.jpg">
 </p>
 
-## 2. Model Summary
+## 2. Synthèse du modèle
 
 ---
 
-**Post-Training: Large-Scale Reinforcement Learning on the Base Model**
+**Post-Entraînement: Apprentissage par renforcement à grande échelle sur le modèle de base**
 
--  We directly apply reinforcement learning (RL) to the base model without relying on supervised fine-tuning (SFT) as a preliminary step. This approach allows the model to explore chain-of-thought (CoT) for solving complex problems, resulting in the development of DeepSeek-R1-Zero. DeepSeek-R1-Zero demonstrates capabilities such as self-verification, reflection, and generating long CoTs, marking a significant milestone for the research community. Notably, it is the first open research to validate that reasoning capabilities of LLMs can be incentivized purely through RL, without the need for SFT. This breakthrough paves the way for future advancements in this area.
+- Nous appliquons directement le RL sur le modèle de base sans devoir faire du fine-tuning supervisé (STF) comme étape préliminaire. Cette approche permet au modèle d'explorer la chaîne de pensée (chain-of-thought, CoT) pour résoudre des problèmes complexes, ce qui a conduit au développement de DeepSeek-R1-Zero. DeepSeek-R1-Zero démontre des capacités telles que l'auto-vérification, la réflexion et la génération de longs CoT, marquant ainsi une étape importante pour la communauté des chercheurs. Il s'agit notamment du premier projet de recherche ouvert à valider le fait que les capacités de raisonnement des LLM peuvent être encouragées uniquement par le biais de la RL, sans qu'il soit nécessaire de recourir à la SFT. Cette percée ouvre la voie à de futures avancées dans ce domaine. 
 
--   We introduce our pipeline to develop DeepSeek-R1. The pipeline incorporates two RL stages aimed at discovering improved reasoning patterns and aligning with human preferences, as well as two SFT stages that serve as the seed for the model's reasoning and non-reasoning capabilities.
-    We believe the pipeline will benefit the industry by creating better models. 
+- Nous présentons notre processus de développement de DeepSeek-R1. Ce pipeline comprend deux étapes de RL visant à découvrir des modèles de raisonnement améliorés et à s'aligner sur les préférences humaines, ainsi que deux étapes de SFT qui servent de germe pour les capacités de raisonnement et de non-raisonnement du modèle. Nous pensons que ce pipeline sera bénéfique à l'industrie en créant de meilleurs modèles.
 
 ---
 
-**Distillation: Smaller Models Can Be Powerful Too**
+**Distillation: Les modèles plus petits peuvent être puissants aussi**
 
--  We demonstrate that the reasoning patterns of larger models can be distilled into smaller models, resulting in better performance compared to the reasoning patterns discovered through RL on small models. The open source DeepSeek-R1, as well as its API, will benefit the research community to distill better smaller models in the future. 
-- Using the reasoning data generated by DeepSeek-R1, we fine-tuned several dense models that are widely used in the research community. The evaluation results demonstrate that the distilled smaller dense models perform exceptionally well on benchmarks. We open-source distilled 1.5B, 7B, 8B, 14B, 32B, and 70B checkpoints based on Qwen2.5 and Llama3 series to the community.
+-  Nous démontrons que les modèles de raisonnement des grands modèles peuvent être distillés dans des modèles réduits, ce qui permet d'obtenir de meilleures performances par rapport aux modèles de raisonnement découverts par le biais du RL sur les petits modèles. Le modèle Open-Source DeepSeek-R1, ainsi que son API, permettra à la communauté des chercheurs de distiller de meilleurs modèles réduits à l'avenir.
+- En utilisant les données de raisonnement générées par DeepSeek-R1, nous avons fine-tuné plusieurs modèles denses qui sont largement utilisés dans la communauté des chercheurs. Les résultats d'évaluation montrent que les modèles distillés sont particulièrement performants sur les benchmarks. Nous mettons à la disposition de la communauté (en Open-Source) plusieurs modèles de 1.5B, 7B, 8B, 14B, 32B et 70B paramètres basés sur les séries Qwen2.5 et Llama3.
 
-## 3. Model Downloads
+## 3. Téléchargements
 
-### DeepSeek-R1 Models
+### Modèles DeepSeek-R1
 
 <div align="center">
 
-| **Model** | **#Total Params** | **#Activated Params** | **Context Length** | **Download** |
+| **Modèle** | **#Total Params** | **#Params activés** | **Longueur du contexte** | **Télécharger** |
 | :------------: | :------------: | :------------: | :------------: | :------------: |
 | DeepSeek-R1-Zero | 671B | 37B | 128K   | [🤗 HuggingFace](https://huggingface.co/deepseek-ai/DeepSeek-R1-Zero)   |
 | DeepSeek-R1   | 671B | 37B |  128K   | [🤗 HuggingFace](https://huggingface.co/deepseek-ai/DeepSeek-R1)   |
 
 </div>
 
-DeepSeek-R1-Zero & DeepSeek-R1 are trained based on DeepSeek-V3-Base. 
-For more details regarding the model architecture, please refer to [DeepSeek-V3](https://github.com/deepseek-ai/DeepSeek-V3) repository.
+NOTE : 1B équivaut à un milliard
 
-### DeepSeek-R1-Distill Models
+DeepSeek-R1-Zero et DeepSeek-R1 ont été entraînés en se basant sur DeepSeek-V3-Base. 
+Pour plus de détails sur l'architecture du modèle, veuillez vous référer au dépôt [DeepSeek-V3](https://github.com/deepseek-ai/DeepSeek-V3).
+
+### Modèles DeepSeek-R1-Distill
 
 <div align="center">
 
-| **Model** | **Base Model** | **Download** |
+| **Modèle** | **Modèle de base** | **Télécharger** |
 | :------------: | :------------: | :------------: |
 | DeepSeek-R1-Distill-Qwen-1.5B  | [Qwen2.5-Math-1.5B](https://huggingface.co/Qwen/Qwen2.5-Math-1.5B) | [🤗 HuggingFace](https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B)   |
 | DeepSeek-R1-Distill-Qwen-7B  | [Qwen2.5-Math-7B](https://huggingface.co/Qwen/Qwen2.5-Math-7B) | [🤗 HuggingFace](https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B)   |
@@ -110,13 +111,13 @@ For more details regarding the model architecture, please refer to [DeepSeek-V3]
 
 </div>
 
-DeepSeek-R1-Distill models are fine-tuned based on open-source models, using samples generated by DeepSeek-R1.
-We slightly change their configs and tokenizers. Please use our setting to run these models.
+Les modèles DeepSeek-R1-Distill ont été fine-tunés en se basant sur des modèles open-source avec des données générés par DeepSeek-R1.
+Nous avons légérement modifié leurs configuration et tokenizers. Veuillez utiliser nos configurations pour ces modèles.
 
-## 4. Evaluation Results
+## 4. Résultats d'évaluation
 
-### DeepSeek-R1-Evaluation
- For all our models, the maximum generation length is set to 32,768 tokens. For benchmarks requiring sampling, we use a temperature of $0.6$, a top-p value of $0.95$, and generate 64 responses per query to estimate pass@1.
+### Évaluation de DeepSeek-R1-Evaluation
+Pour tous nos modèles, la longueur maximale de génération est mise à 32'768 token. Pour les *benchmarks* utilisant de l'échantillonnage, nous avons utilisé une température de $0.6$, une top-p valeur de $0.95$ et une génération de 64 réponses par requête pour estimer pass@1.
 <div align="center">
 
 
@@ -150,7 +151,7 @@ We slightly change their configs and tokenizers. Please use our setting to run t
 </div>
 
 
-### Distilled Model Evaluation
+### Évaluation des modèles distillés
 
 
 <div align="center">
@@ -171,53 +172,52 @@ We slightly change their configs and tokenizers. Please use our setting to run t
 </div>
 
 
-## 5. Chat Website & API Platform
-You can chat with DeepSeek-R1 on DeepSeek's official website: [chat.deepseek.com](https://chat.deepseek.com), and switch on the button "DeepThink"
+## 5. Chatbot en ligne et plateforme API
 
-We also provide OpenAI-Compatible API at DeepSeek Platform: [platform.deepseek.com](https://platform.deepseek.com/)
+Vous pouvez utiliser DeepSeek-R1 sur le site officiel de DeepSeek: [chat.deepseek.com](https://chat.deepseek.com), en appuyant sur le bouton "DeepThink"
 
-## 6. How to Run Locally
+Nous fournissons aussi une API compatible avec OpenAI sur la plateforme DeepSeek : [platform.deepseek.com](https://platform.deepseek.com/)
 
-### DeepSeek-R1 Models
+## 6. Comment exécuter localement
 
-Please visit [DeepSeek-V3](https://github.com/deepseek-ai/DeepSeek-V3) repo for more information about running DeepSeek-R1 locally.
+### Modèles DeepSeek-R1
 
-**NOTE: Hugging Face's Transformers has not been directly supported yet.**
+Veuillez visiter le repo [DeepSeek-V3](https://github.com/deepseek-ai/DeepSeek-V3) pour plus d'informations sur l'exécution locale de DeepSeek-R1.
 
-### DeepSeek-R1-Distill Models
+**NOTE: les Transformers de Hugging Face ne sont pas encore supportés.**
 
-DeepSeek-R1-Distill models can be utilized in the same manner as Qwen or Llama models.
+### Modèles DeepSeek-R1-Distill
 
-For instance, you can easily start a service using [vLLM](https://github.com/vllm-project/vllm):
+Les modèles DeepSeek-R1-Distill peuvent être utilisés de la même manière que les modèles Qwen ou Llama.
+
+Par exemple, vous pouvez facilement démarrer un service en utilisant [vLLM](https://github.com/vllm-project/vllm):
 
 ```shell
 vllm serve deepseek-ai/DeepSeek-R1-Distill-Qwen-32B --tensor-parallel-size 2 --max-model-len 32768 --enforce-eager
 ```
 
-You can also easily start a service using [SGLang](https://github.com/sgl-project/sglang)
+Vous pouvez également démarrer un service avec [SGLang](https://github.com/sgl-project/sglang)
 
 ```bash
 python3 -m sglang.launch_server --model deepseek-ai/DeepSeek-R1-Distill-Qwen-32B --trust-remote-code --tp 2
 ```
 
-### Usage Recommendations
+### Recommandations pratiques 
 
-**We recommend adhering to the following configurations when utilizing the DeepSeek-R1 series models, including benchmarking, to achieve the expected performance:**
+Nous vous recommandons de vous adhérer aux configurations suivantes pour la série de modèles DeepSeek-R1, y compris pour les *benchmarks*, pour atteindre les performances prévues:
 
-1. Set the temperature within the range of 0.5-0.7 (0.6 is recommended) to prevent endless repetitions or incoherent outputs.
-2. **Avoid adding a system prompt; all instructions should be contained within the user prompt.**
-3. For mathematical problems, it is advisable to include a directive in your prompt such as: "Please reason step by step, and put your final answer within \boxed{}."
-4. When evaluating model performance, it is recommended to conduct multiple tests and average the results.
+1. Utiliser une température dans l'intervalle \[0.5, 0.7\] (0.6 est recommandé) pour éviter des répétitions sans fin ou des réponses incohérentes.
+2. **Éviter d'ajouter des prompts systèmes; Toute instruction doit être comprise dans le prompt utilisateur.**
+3. Pour les problèmes mathématiques, il est fortement conseillé d'inclure une consigne dans votre prompt tel que: "Veuillez raisonner étape par étape et mettez votre réponse dans \boxed{}."
+4. Pour évaluer les performances du modèle, nous vous conseillons de faire plusieurs essais et de prendre la moyenne des résultats.
 
-Additionally, we have observed that the DeepSeek-R1 series models tend to bypass thinking pattern (i.e., outputting "\<think\>\n\n\</think\>") when responding to certain queries, which can adversely affect the model's performance.
-**To ensure that the model engages in thorough reasoning, we recommend enforcing the model to initiate its response with "\<think\>\n" at the beginning of every output.**
+## 7. Licence
 
-## 7. License
-This code repository and the model weights are licensed under the [MIT License](https://github.com/deepseek-ai/DeepSeek-R1/blob/main/LICENSE).
-DeepSeek-R1 series support commercial use, allow for any modifications and derivative works, including, but not limited to, distillation for training other LLMs. Please note that:
-- DeepSeek-R1-Distill-Qwen-1.5B, DeepSeek-R1-Distill-Qwen-7B, DeepSeek-R1-Distill-Qwen-14B and DeepSeek-R1-Distill-Qwen-32B are derived from [Qwen-2.5 series](https://github.com/QwenLM/Qwen2.5), which are originally licensed under [Apache 2.0 License](https://huggingface.co/Qwen/Qwen2.5-1.5B/blob/main/LICENSE), and now finetuned with 800k samples curated with DeepSeek-R1.
-- DeepSeek-R1-Distill-Llama-8B is derived from Llama3.1-8B-Base and is originally licensed under [llama3.1 license](https://huggingface.co/meta-llama/Llama-3.1-8B/blob/main/LICENSE).
-- DeepSeek-R1-Distill-Llama-70B is derived from Llama3.3-70B-Instruct and is originally licensed under [llama3.3 license](https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct/blob/main/LICENSE).
+Ce dépôt de code et les poids des modèles sont sous une [Licence MIT](https://github.com/deepseek-ai/DeepSeek-R1/blob/main/LICENSE).
+La série de modèles DeepSeek-R1 prend en charge l'utilisation à des fins commerciales, permet toutes les modifications et les travaux dérivés, y compris, mais pas uniquement, la distillation pour l'entraînement d'autres LLM. À noter que :
+- DeepSeek-R1-Distill-Qwen-1.5B, DeepSeek-R1-Distill-Qwen-7B, DeepSeek-R1-Distill-Qwen-14B et DeepSeek-R1-Distill-Qwen-32B sont dérivés de la [série Qwen-2.5](https://github.com/QwenLM/Qwen2.5), qui sont à l'origine sous une [Licence Apache 2.0](https://huggingface.co/Qwen/Qwen2.5-1.5B/blob/main/LICENSE), et ont été peufinés avec 800k échantillons analysés avec DeepSeek-R1.
+- DeepSeek-R1-Distill-Llama-8B est dérivé de Llama3.1-8B-Base qui est à l'origine sous une [licence llama3.1](https://huggingface.co/meta-llama/Llama-3.1-8B/blob/main/LICENSE).
+- DeepSeek-R1-Distill-Llama-70B est dérivé de Llama3.3-70B-Instruct qui est à l'origine sous une [licence llama3.3](https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct/blob/main/LICENSE).
 
 ## 8. Citation
 ```
@@ -234,4 +234,4 @@ DeepSeek-R1 series support commercial use, allow for any modifications and deriv
 ```
 
 ## 9. Contact
-If you have any questions, please raise an issue or contact us at [service@deepseek.com](service@deepseek.com).
+Si vous avez des questions, créez un *issue* ou contactez-nous à [service@deepseek.com](service@deepseek.com).
