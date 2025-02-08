@@ -1,0 +1,11 @@
+name: "DeepSeek Issue Template"
+description: "Use this template for reporting issues related to DeepSeek."
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this issue report. Please provide as much detail as possible.
+contact_links:
+  - name: 🗨️ DeepSeek Community Support
+    url: https://github.com/deepseek-ai/DeepSeek-R1/discussions
+    about: Ask questions and discuss with other community members
