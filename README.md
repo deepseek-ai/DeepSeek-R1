@@ -195,7 +195,7 @@ vllm serve deepseek-ai/DeepSeek-R1-Distill-Qwen-32B --tensor-parallel-size 2 --m
 You can also easily start a service using [SGLang](https://github.com/sgl-project/sglang)
 
 ```bash
-python3 -m sglang.launch_server --model deepseek-ai/DeepSeek-R1-Distill-Qwen-32B --trust-remote-code --tp 2
+python3 -m sglang.launch_server --model deepseek-ai/DeepSeek-R1-Distill-Qwen-32B --trust-remote-code --tensor-parallel-size 2
 ```
 
 ### Usage Recommendations
