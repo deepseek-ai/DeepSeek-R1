@@ -42,6 +42,9 @@
   <a href="https://github.com/deepseek-ai/DeepSeek-R1/blob/main/DeepSeek_R1.pdf"><b>Paper Link</b>👁️</a>
 </p>
 
+<p align="center">
+ <b> English </b> | <b><a href="https://github.com/deepseek-ai/DeepSeek-R1/blob/main/i18n/README_pt-BR.md">Português</a></b>
+</p>
 
 ## 1. Introduction
 
