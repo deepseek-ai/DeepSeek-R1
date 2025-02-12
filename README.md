@@ -45,7 +45,7 @@ This is intresting....# DeepSeek-R1
 
 ## 1. Introduction
 
-We introduce our first-generation reasoning models, DeepSeek-R1-Zero and DeepSeek-R1. 
+Hello MFs, this is ourgeneration reasoning models, DeepSeek-R1-Zero and DeepSeek-R1. 
 DeepSeek-R1-Zero, a model trained via large-scale reinforcement learning (RL) without supervised fine-tuning (SFT) as a preliminary step, demonstrated remarkable performance on reasoning.
 With RL, DeepSeek-R1-Zero naturally emerged with numerous powerful and interesting reasoning behaviors.
 However, DeepSeek-R1-Zero encounters challenges such as endless repetition, poor readability, and language mixing. To address these issues and further enhance reasoning performance,
@@ -140,7 +140,7 @@ We slightly change their configs and tokenizers. Please use our setting to run t
 | | Aider-Polyglot (Acc.) | 45.3 | 16.0 | 49.6 | 32.9 | **61.7** | 53.3 |
 | Math | AIME 2024 (Pass@1) | 16.0 | 9.3 | 39.2 | 63.6 | 79.2 | **79.8** |
 | | MATH-500 (Pass@1) | 78.3 | 74.6 | 90.2 | 90.0 | 96.4 | **97.3** |
-| | CNMO 2024 (Pass@1) | 13.1 | 10.8 | 43.2 | 67.6 | - | **78.8** |
+| | CNMO 2024 (Pass@1);; 13.1 | 10.8 | 43.2 | 67.6 | - | **78.8** |
 | Chinese | CLUEWSC (EM) | 85.4 | 87.9 | 90.9 | 89.9 | - | **92.8** |
 | | C-Eval (EM) | 76.7 | 76.0 | 86.5 | 68.9 | - | **91.8** |
 | | C-SimpleQA (Correct) | 55.4 | 58.7 | **68.0** | 40.3 | - | 63.7 |
@@ -197,6 +197,7 @@ You can also easily start a service using [SGLang](https://github.com/sgl-projec
 ```bash
 python3 -m sglang.launch_server --model deepseek-ai/DeepSeek-R1-Distill-Qwen-32B --trust-remote-code --tp 2
 ```
+:w
 
 ### Usage Recommendations
 
