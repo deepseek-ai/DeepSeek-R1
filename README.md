@@ -223,7 +223,7 @@ file_template = \
 {question}"""
 ```
 
-For Web Search, {search_results}, {cur_data}, and {question} are arguments. 
+For Web Search, {search_results}, {cur_date}, and {question} are arguments. 
 
 For Chinese query, we use the prompt:
 ```
