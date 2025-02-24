@@ -261,7 +261,7 @@ DeepSeek-R1 series support commercial use, allow for any modifications and deriv
 - DeepSeek-R1-Distill-Llama-70B is derived from Llama3.3-70B-Instruct and is originally licensed under [llama3.3 license](https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct/blob/main/LICENSE).
 
 ## 8. Citation
-```
+```bibtex
 @misc{deepseekai2025deepseekr1incentivizingreasoningcapability,
       title={DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning}, 
       author={DeepSeek-AI},
