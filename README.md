@@ -44,6 +44,37 @@ To support the research community, we have open-sourced DeepSeek-R1-Zero, DeepSe
   <img width="80%" src="figures/benchmark.jpg">
 </p>
 
+## System Prompts and Expected Prompt Format
+
+### System Prompts
+
+The R1 distilled models use specific system prompts to guide the model's behavior and responses. These prompts are designed to ensure that the model generates coherent and contextually appropriate outputs. Below are the system prompts used for the R1 distilled models:
+
+1. **General Prompt**: "You are an AI assistant. How can I help you today?"
+2. **Math Problem Prompt**: "Solve the following math problem step-by-step."
+3. **Code Generation Prompt**: "Write a code snippet to accomplish the following task."
+4. **Reasoning Task Prompt**: "Explain your reasoning for the following question."
+
+### Expected Prompt Format
+
+When interacting with the R1 distilled models, it is important to follow the expected prompt format to achieve the best results. Here are some examples of the expected prompt format:
+
+1. **General Inquiry**:
+   - User: "What is the capital of France?"
+   - Model: "The capital of France is Paris."
+
+2. **Math Problem**:
+   - User: "Solve the following math problem step-by-step: What is the derivative of x^2 + 3x + 2?"
+   - Model: "To find the derivative of the function x^2 + 3x + 2, we apply the power rule. The derivative is 2x + 3."
+
+3. **Code Generation**:
+   - User: "Write a code snippet to reverse a string in Python."
+   - Model: "Here is a Python code snippet to reverse a string:\n```python\ndef reverse_string(s):\n    return s[::-1]\n\nprint(reverse_string('hello'))  # Output: 'olleh'```"
+
+4. **Reasoning Task**:
+   - User: "Explain your reasoning for the following question: Why does the sun rise in the east?"
+   - Model: "The sun appears to rise in the east because the Earth rotates on its axis from west to east. As the Earth rotates, different parts of the planet are exposed to the sun's light, creating the appearance of the sun rising in the east and setting in the west."
+
 ## 2. Model Summary
 
 ---
