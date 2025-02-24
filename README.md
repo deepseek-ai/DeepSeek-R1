@@ -176,6 +176,8 @@ For instance, you can easily start a service using [vLLM](https://github.com/vll
 ```shell
 vllm serve deepseek-ai/DeepSeek-R1-Distill-Qwen-32B --tensor-parallel-size 2 --max-model-len 32768 --enforce-eager
 ```
+With `vllm` >= v0.7.1, you can additionally append `--enable-reasoning --reasoning-parser deepseek_r1` to above shell command, for reasoning output parsing.
+
 
 You can also easily start a service using [SGLang](https://github.com/sgl-project/sglang)
 
