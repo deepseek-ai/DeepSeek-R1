@@ -38,6 +38,14 @@ we introduce DeepSeek-R1, which incorporates cold-start data before RL.
 DeepSeek-R1 achieves performance comparable to OpenAI-o1 across math, code, and reasoning tasks. 
 To support the research community, we have open-sourced DeepSeek-R1-Zero, DeepSeek-R1, and six dense models distilled from DeepSeek-R1 based on Llama and Qwen. DeepSeek-R1-Distill-Qwen-32B outperforms OpenAI-o1-mini across various benchmarks, achieving new state-of-the-art results for dense models.
 
+**Key Features**
+
+- State-of-the-art performance in reasoning tasks
+- Open-source availability of both main models
+- Six dense distilled models based on Llama and Qwen architectures
+- 32,768 token context length support
+- Comprehensive benchmark results across multiple domains
+
 **NOTE: Before running DeepSeek-R1 series models locally, we kindly recommend reviewing the [Usage Recommendation](#usage-recommendations) section.**
 
 <p align="center">
@@ -274,4 +282,7 @@ DeepSeek-R1 series support commercial use, allow for any modifications and deriv
 ```
 
 ## 9. Contact
-If you have any questions, please raise an issue or contact us at [service@deepseek.com](service@deepseek.com).
+For questions or support:
+
+Create an issue in this repository
+Email: service@deepseek.com
