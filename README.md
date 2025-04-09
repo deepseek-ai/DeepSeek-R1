@@ -159,6 +159,22 @@ You can chat with DeepSeek-R1 on DeepSeek's official website: [chat.deepseek.com
 
 We also provide OpenAI-Compatible API at DeepSeek Platform: [platform.deepseek.com](https://platform.deepseek.com/)
 
+Gradio app with API
+
+```
+pip install ai-gradio[deepseek]
+
+import gradio as gr
+import ai_gradio
+
+
+gr.load(
+    name='deepseek:deepseek-reasoner',
+    src=ai_gradio.registry,
+    coder=True # remove for regular chat
+).launch()
+```
+
 ## 6. How to Run Locally
 
 ### DeepSeek-R1 Models
