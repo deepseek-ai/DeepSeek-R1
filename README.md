@@ -1,3 +1,4 @@
+[🇺🇸 English 🇺🇸](./README.md) ⬦ [🇨🇳 简体中文 🇨🇳](./README_zh.md)
 # DeepSeek-R1
 <!-- markdownlint-disable first-line-h1 -->
 <!-- markdownlint-disable html -->
