@@ -32,7 +32,7 @@
 
 We introduce our first-generation reasoning models, DeepSeek-R1-Zero and DeepSeek-R1. 
 DeepSeek-R1-Zero, a model trained via large-scale reinforcement learning (RL) without supervised fine-tuning (SFT) as a preliminary step, demonstrated remarkable performance on reasoning.
-With RL, DeepSeek-R1-Zero naturally emerged with numerous powerful and interesting reasoning behaviors.
+With RL, DeepSeek-R1-Zero naturally exhibited numerous powerful and interesting reasoning behaviors.
 However, DeepSeek-R1-Zero encounters challenges such as endless repetition, poor readability, and language mixing. To address these issues and further enhance reasoning performance,
 we introduce DeepSeek-R1, which incorporates cold-start data before RL.
 DeepSeek-R1 achieves performance comparable to OpenAI-o1 across math, code, and reasoning tasks. 
@@ -187,7 +187,7 @@ python3 -m sglang.launch_server --model deepseek-ai/DeepSeek-R1-Distill-Qwen-32B
 
 **We recommend adhering to the following configurations when utilizing the DeepSeek-R1 series models, including benchmarking, to achieve the expected performance:**
 
-1. Set the temperature within the range of 0.5-0.7 (0.6 is recommended) to prevent endless repetitions or incoherent outputs.
+1. Set the temperature between 0.5 and 0.7 (with 0.6 recommended) to prevent endless repetition or incoherent outputs.
 2. **Avoid adding a system prompt; all instructions should be contained within the user prompt.**
 3. For mathematical problems, it is advisable to include a directive in your prompt such as: "Please reason step by step, and put your final answer within \boxed{}."
 4. When evaluating model performance, it is recommended to conduct multiple tests and average the results.
