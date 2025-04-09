@@ -103,7 +103,7 @@ We slightly change their configs and tokenizers. Please use our setting to run t
 <div align="center">
 
 
-| Category | Benchmark (Metric) | Claude-3.5-Sonnet-1022 | GPT-4o 0513 | DeepSeek V3 | OpenAI o1-mini | OpenAI o1-1217 | DeepSeek R1 |
+| Category | Benchmark (Metric) | Claude-3.5-Sonnet-1022 | GPT-4o 0513 | DeepSeek-V3 | OpenAI o1-mini | OpenAI o1-1217 | DeepSeek-R1 |
 |----------|-------------------|----------------------|------------|--------------|----------------|------------|--------------|
 | | Architecture | - | - | MoE | - | - | MoE |
 | | # Activated Params | - | - | 37B | - | - | 37B |
