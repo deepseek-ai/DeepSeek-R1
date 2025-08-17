@@ -1,0 +1,73 @@
+MA TRIPLE ALERT INDICATOR - INSTALLATION & USAGE GUIDE
+=======================================================
+
+OVERVIEW:
+This custom MT5 indicator displays three Moving Averages (MA 5, 8, and 13 periods) 
+and generates buy/sell alerts with sound when specific conditions are met.
+
+FEATURES:
+- Displays MA 5 (Red), MA 8 (Blue), and MA 13 (Green) on M5 chart
+- Buy Alert: When all 3 MAs are trending upward and properly separated
+- Sell Alert: When all 3 MAs are trending downward and properly separated
+- Sound alerts with customizable sound files
+- Visual alerts and notifications
+- Configurable parameters
+
+INSTALLATION:
+1. Copy the MA_Triple_Alert.mq5 file to your MT5 data folder:
+   [MT5 Installation]/MQL5/Indicators/
+   
+2. In MT5, go to Navigator → Indicators → Custom
+   
+3. Refresh or restart MT5 to see the new indicator
+
+4. Drag and drop "MA Triple Alert" onto your M5 chart
+
+USAGE:
+1. Open any currency pair on M5 timeframe
+2. Apply the MA Triple Alert indicator
+3. The indicator will display three colored moving averages:
+   - Red line: MA 5
+   - Blue line: MA 8  
+   - Green line: MA 13
+
+ALERT CONDITIONS:
+
+BUY SIGNAL:
+- All three MAs must be trending upward (rising for at least 2 consecutive periods)
+- MAs must be properly ordered: MA5 > MA8 > MA13
+- MAs must not be touching (minimum distance maintained)
+- Alert appears with sound notification
+
+SELL SIGNAL:
+- All three MAs must be trending downward (falling for at least 2 consecutive periods)  
+- MAs must be properly ordered: MA5 < MA8 < MA13
+- MAs must not be touching (minimum distance maintained)
+- Alert appears with sound notification
+
+CUSTOMIZABLE PARAMETERS:
+- MA5 Period: Default 5
+- MA8 Period: Default 8
+- MA13 Period: Default 13
+- MA Method: SMA, EMA, SMMA, LWMA
+- Applied Price: Close, Open, High, Low, etc.
+- Minimum Distance: Points between MAs (default 5.0)
+- Enable Alerts: On/Off
+- Enable Sounds: On/Off
+- Buy Sound: alert.wav (customizable)
+- Sell Sound: alert2.wav (customizable)
+
+SOUND FILES:
+Place custom sound files in: [MT5 Installation]/Sounds/
+Default sounds (alert.wav, alert2.wav) are included with MT5.
+
+TROUBLESHOOTING:
+- If alerts don't work, check that "Allow DLL imports" and "Allow WebRequest" are enabled in Tools → Options → Expert Advisors
+- Ensure sound files exist in the Sounds folder
+- Check that notifications are enabled in Tools → Options → Notifications
+
+NOTES:
+- Alerts are generated only on completed bars (not current forming bar)
+- Only one alert per bar to avoid spam
+- Indicator works best on M5 timeframe as requested
+- Can be applied to any currency pair or symbol 
